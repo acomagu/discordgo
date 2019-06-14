@@ -408,7 +408,7 @@ func (v *VoiceConnection) onEvent(message []byte) {
 		if v.OpusSend == nil {
 			v.OpusSend = make(chan []byte, 2)
 		}
-		go v.opusSender(v.udpConn, v.close, v.OpusSend, 48000, 960*3)
+		go v.opusSender(v.udpConn, v.close, v.OpusSend, 48000, 960*2)
 
 		// Start the opusReceiver
 		if !v.deaf {
